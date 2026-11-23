@@ -57,24 +57,24 @@ def painel(ax, L, titulo, banda, xlim):
     ax.axvline(0, color=TINTA2, lw=1, zorder=1)
     for l, yy in zip(L, ys):
         cor = LARANJA if l['comb'] else AZUL
-        ax.plot([100 * l['lo'], 100 * l['hi']], [yy, yy], color=cor, lw=2.6 if l['comb'] else 2,
+        ax.plot([100 * l['lo'], 100 * l['hi']], [yy, yy], color=cor, lw=1.8 if l['comb'] else 1.4,
                 solid_capstyle='round', zorder=2)
         if l['comb']:
-            ax.plot(100 * l['est'], yy, marker='D', ms=9, color=LARANJA, mec='white', mew=1.5, zorder=3)
+            ax.plot(100 * l['est'], yy, marker='D', ms=6, color=LARANJA, mec='white', mew=1, zorder=3)
         else:
-            ax.plot(100 * l['est'], yy, marker='o', ms=8, color=AZUL, mec='white', mew=1.5, zorder=3)
-        ax.text(xlim[1] + 0.03 * (xlim[1] - xlim[0]), yy, faixa(l),
-                va='center', ha='left', fontsize=9, color=TINTA2, clip_on=False)
+            ax.plot(100 * l['est'], yy, marker='o', ms=5, color=AZUL, mec='white', mew=1, zorder=3)
+        ax.text(xlim[1] + 0.02 * (xlim[1] - xlim[0]), yy, faixa(l),
+                va='center', ha='left', fontsize=8, color=TINTA2, clip_on=False)
     ax.set_yticks(ys)
-    ax.set_yticklabels([l['rot'] for l in L], fontsize=9.5, color=TINTA)
+    ax.set_yticklabels([l['rot'] for l in L], fontsize=8, color=TINTA)
     for tl, l in zip(ax.get_yticklabels(), L):
         if l['comb']:
             tl.set_fontweight('bold')
     ax.set_ylim(ys[-1] + 0.7, -0.7)
     ax.set_xlim(*xlim)
-    ax.set_title(titulo, loc='left', fontsize=10.5, color=TINTA, fontweight='bold')
+    ax.set_title(titulo, loc='left', fontsize=9, color=TINTA, fontweight='bold')
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _: br(v, '%g')))
-    ax.tick_params(axis='x', labelsize=9, colors=TINTA2)
+    ax.tick_params(axis='x', labelsize=8, colors=TINTA2)
     ax.tick_params(axis='y', length=0)
     ax.grid(axis='x', color=GRADE, lw=0.6, zorder=0)
     for s in ('top', 'right', 'left'):
@@ -93,11 +93,11 @@ def main():
             print('  %-28s %+.2f [%+.2f; %+.2f]' % (l['rot'], 100 * l['est'], 100 * l['lo'], 100 * l['hi']))
     lim = max(max(abs(l['lo']), abs(l['hi'])) for l in La + Lb) * 100
     lim = np.ceil(lim + 0.5)
-    fig, axs = plt.subplots(2, 1, figsize=(8.5, 5.0))
+    fig, axs = plt.subplots(2, 1, figsize=(4.8, 3.4))
     painel(axs[0], La, '(a) Estágio 1 menos controle (p.p.)', banda, (-lim, lim))
     painel(axs[1], Lb, '(b) Seletivas menos aleatória (p.p.)', banda, (-lim, lim))
-    axs[1].set_xlabel('diferença de acurácia (p.p.)', fontsize=9.5, color=TINTA2)
-    fig.subplots_adjust(left=0.25, right=0.76, top=0.94, bottom=0.11, hspace=0.42)
+    axs[1].set_xlabel('diferença de acurácia (p.p.)', fontsize=8.5, color=TINTA2)
+    fig.subplots_adjust(left=0.345, right=0.715, top=0.93, bottom=0.12, hspace=0.45)
     for ext in ('pdf', 'png'):
         fig.savefig(os.path.join(FIGURAS, 'figura_forest.' + ext), dpi=300)
     print('figuras/figura_forest.pdf / .png gravados (banda = %.2f pp, eixo +/- %.0f pp)' % (banda, lim))
