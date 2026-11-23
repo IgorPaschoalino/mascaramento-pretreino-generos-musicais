@@ -84,9 +84,7 @@ def main():
     for k, ax in enumerate(axs.flat):
         r, c = divmod(k, 2)
         if k >= len(paineis):
-            ax.axis('off')
-            ax.text(0.02, 0.0, 'GTZAN, teste #%d: %s\n(10 s iniciais)\nmáscara de 75%%: 372 de 496\npatches em preto'
-                    % (IDX, arquivo), transform=ax.transAxes, va='bottom', ha='left', fontsize=7)
+            ax.axis('off')   # celula vazia; o trecho e a taxa ficam na legenda do LaTeX
             continue
         nome, m = paineis[k]
         img = spec.copy()
