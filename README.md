@@ -87,10 +87,11 @@ O `analysis_final.py` lê `resultados/` e reescreve o `analysis_final.md`. Esse 
 - a meta-análise de efeitos aleatórios;
 - os limites do tipo "efeitos maiores que X p.p. estão excluídos".
 
-O `figura_forest.py` reescreve `figuras/figura_forest.pdf` e `.png`. Os números principais, também impressos no terminal, são:
-- Estágio 1 menos controle, combinado: −0,03 p.p. [−2,15; +2,09];
-- seletivas menos aleatória, combinado: +0,07 p.p. [−0,66; +0,80];
-- maior diferença entre pares, onset menos energia: +0,88 p.p. [−3,26; +5,02].
+O `figura_forest.py` reescreve `figuras/figura_forest.pdf` e `.png` e imprime no terminal os valores de cada recorte. A figura tem dois painéis:
+- (a) Estágio 1 menos controle, com o combinado em −0,03 p.p. [−2,15; +2,09];
+- (b) seletivas (energia, onset, combinada) menos aleatória, com o combinado em +0,07 p.p. [−0,66; +0,80].
+
+O AST com 5 folds tem só 1 semente e fica fora da figura; ele aparece no `analysis_final.md`.
 
 O `figura_mascaras.py` precisa do cache pré-processado do GTZAN (ver abaixo), do `torch` e do `datasets`:
 
