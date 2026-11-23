@@ -1,0 +1,15 @@
+# O torch NAO esta aqui: ele vem do indice da NVIDIA e e instalado pelo
+# instalar.sh, que escolhe a versao de CUDA compativel com o driver.
+#
+# Travadas: as tres bibliotecas que afetam o resultado numerico ou o formato
+# do cache (as mesmas versoes de todas as corridas anteriores, inclusive a v1).
+transformers==4.46.3
+datasets==4.8.5
+huggingface_hub==0.36.2
+# Livres dentro de uma faixa, para instalar em qualquer Python 3.10-3.13.
+numpy>=1.26,<3
+librosa>=0.10.2
+scikit-learn>=1.3
+scipy>=1.11
+soundfile>=0.12.1
+accelerate>=0.26.0

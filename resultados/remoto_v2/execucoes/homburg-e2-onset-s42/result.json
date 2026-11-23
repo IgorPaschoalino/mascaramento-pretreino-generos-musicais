@@ -1,0 +1,28 @@
+{
+  "test_accuracy": 0.425,
+  "test_f1_macro": 0.13997113997113997,
+  "test_loss": 1.99591064453125,
+  "n_test": 40,
+  "curve": [
+    {
+      "epoch": 1.0,
+      "eval_loss": 2.561755418777466,
+      "eval_f1_macro": 0.043478260869565216,
+      "eval_accuracy": 0.2
+    },
+    {
+      "epoch": 2.0,
+      "eval_loss": 2.23870849609375,
+      "eval_f1_macro": 0.2004826254826255,
+      "eval_accuracy": 0.375
+    }
+  ],
+  "msm_val_loss_first": 0.7397186040878296,
+  "msm_val_loss_last": 0.6339921355247498,
+  "dataset": "homburg",
+  "condicao": "e2",
+  "estrategia": "onset",
+  "semente": 42,
+  "minutos": 0.21903559764226277,
+  "quando": "2026-10-17T23:51:59"
+}

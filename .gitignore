@@ -1,0 +1,11 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+cache/
+cache_remoto/
+data/
+models*/
+logs*/
+*.zip
+.claude/

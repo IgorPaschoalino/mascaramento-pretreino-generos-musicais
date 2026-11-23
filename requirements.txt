@@ -1,0 +1,15 @@
+# Versoes do ambiente em que as 581 execucoes locais e as analises rodaram (Python 3.13).
+# Para refazer tabelas e figuras basta numpy, scipy e matplotlib.
+numpy==2.4.4
+scipy==1.17.1
+matplotlib==3.10.9
+# Treino e pre-processamento (precisam de GPU NVIDIA para tempo razoavel).
+# O torch foi instalado do indice CUDA 12.4:
+#   pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0
+transformers==4.46.3
+accelerate==1.13.0
+datasets==4.8.5
+huggingface_hub==0.36.2
+scikit-learn==1.5.2
+librosa==0.11.0
